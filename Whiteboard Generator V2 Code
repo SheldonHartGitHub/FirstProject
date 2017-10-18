@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Whiteboard_Name_Generator
+{
+    /// <summary>
+    /// Whiteboard name generator V2.0 by Sheldon Hart
+    /// </summary>
+
+    public partial class WhiteboardNameGeneratorV2 : Form
+    {
+        // Declare the students array
+        string[] StudentsByFirstName = { "Regina", "Steven", "Jacob", "Twokoko", "Mike", "Bryan", "Sheldon", 
+            "Brandon", "Bradley", "Tyler", "Danil", "Thomas", "Joshua", "Peter", "Oriana", "Renata", "Jake", 
+            "Omar", "Martin", "James", "Dinesh", "Eric", "Adam", "David", "Mykal", "Tae", "Zachary", "Jared",
+            "Kashev", "Robert" };
+        // All 30 students are added to the array by their first names
+        Random rand = new Random(); // Adds the random element so it just doesn't cycle through in the first order
+
+
+        public WhiteboardNameGeneratorV2()
+        {
+            InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Makes the button generate a name at random
+            int indexStudents = rand.Next(StudentsByFirstName.Length);
+            this.textBox1.Text = StudentsByFirstName[indexStudents];
+
+        }
+    }
+}
